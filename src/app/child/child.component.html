@@ -1,0 +1,28 @@
+<h2>child component</h2>
+<table>
+    <tr>
+      <th>Movie Name</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let movie of movieList">
+      <td>{{movie}}</td>
+      <td><input type="button" value="Select" 
+        (click)="movieSelected(movie)"></td>
+    </tr>
+</table>
+<pre> <hr>
+ <h3>Highlights</h3>
+<h4>Input</h4>
+1️⃣ Need to decorate a property in the child component as @Input()
+  @Input()
+  movieList: Array string = [];
+2️⃣ In the Parent component where the child selector is used need to add the same input property in Square Bracket [] and assign the value to be passed
+[movieList]="myFavoriteMovies"
+
+<h4>Output</h4>
+1️⃣ Need to mark a property in the child component with the Output decorator and assign an EventEmitter Object
+  @Output()
+  movieSelectedEventEmitter = new EventEmitter();
+2️⃣ In the parent we need to add the event and assign to a method
+(movieSelectedEventEmitter)="selectedMovieToWatch($event)"
+</pre>

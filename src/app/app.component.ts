@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'p_c_Input';
+
+  myFavoriteMovies = [ 'Encanto', 
+  'Spider-Man: No Way Home', 
+  "Harry Potter and the Sorcerer's Stone" ];
+  selectedMovieToWatch(data: string) {
+    debugger;
+    alert(data);
+  }
 }
